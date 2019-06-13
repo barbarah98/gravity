@@ -162,7 +162,11 @@ class Game:
                 'large': PlanetType('large',
                                     radius=settings.planetRadiusLarge,
                                     density=settings.planetDensityLarge,
-                                    count=settings.nLargePlanets)
+                                    count=settings.nLargePlanets),
+                'black': PlanetType('black',
+                                    radius=settings.planetRadiusBlack,
+                                    density=settings.planetDensityBlack,
+                                    count=settings.nBlackPlanets)
         }
 
     def build(self):
@@ -258,7 +262,9 @@ class PlanetGenerator:
                 continue
             if not self.addPlanets(self.pTypes['normal']):
                 continue
-            if self.addPlanets(self.pTypes['small']):
+            if not self.addPlanets(self.pTypes['small']):
+                continue
+            if self.addPlanets(self.pTypes['black']):
                 return
         raise Exception("Failed to create planets")
 
