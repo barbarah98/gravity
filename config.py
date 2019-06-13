@@ -180,7 +180,7 @@ settingVars = {
         'planetSpread': (1, 4, 2),
         'nSmallPlanets': (0, 10, 5),
         'nNormalPlanets': (0, 8, 3),
-        'nLargePlanets': (0, 6, 2)
+        'nLargePlanets': (0, 6, 2),
         'nBlackPlanets': (0, 3, 1)
 }
 
