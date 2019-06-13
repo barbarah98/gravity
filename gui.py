@@ -127,7 +127,13 @@ class Sliders(Container):
                   'from_': s.nLargePlanetsRange.start,
                   'to': s.nLargePlanetsRange.end,
                   'resolution': 1
-                 }]
+                 },
+                 {'variable': var['nBlackPlanets'],
+                  'text': 'Number of black holes',
+                  'from': s.nBlackPlanetsRange.start,
+                  'to': s.nBlackPlanetsRange.end,
+                  'resolution': 1}
+                  ]
 
         for desc in sliders:
             row = sliderRow(self.frame, **desc)
@@ -459,7 +465,8 @@ class App(Container):
                 'planetSpread': tk.DoubleVar(),
                 'nSmallPlanets': tk.IntVar(),
                 'nNormalPlanets': tk.IntVar(),
-                'nLargePlanets': tk.IntVar()
+                'nLargePlanets': tk.IntVar(),
+                'nBlackPlanets': tk.IntVar()
                 }
 
         for k, var in self.settingVariables.items():
